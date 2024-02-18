@@ -1,14 +1,14 @@
 package com.example.jconsoleapp;
 
-// Leetcode 88
+// #Leetcode-88
 public class MergeSortedArray {
 
     /**
      * Call merge method and pass values
      */
     public static void preMerge() {
-//        int[] nums1 = {1,2,3,0,0,0};
-//        int[] nums2 = {2,5,6};
+//        int[] nums1 = {1, 2, 3, 0, 0, 0};
+//        int[] nums2 = {2, 5, 6};
 //        int m = 3;
 //        int n = 3;
 //        int[] nums1 = {1};
@@ -35,7 +35,7 @@ public class MergeSortedArray {
 
         if (m == 0) {
             nums1 = nums2;
-            MyHelper.p(nums1);
+            MyHelper.pa(nums1);
             return;
         }
 
@@ -69,7 +69,7 @@ public class MergeSortedArray {
         }
 
         nums1 = result;
-        MyHelper.p(nums1);
+        MyHelper.pa(nums1);
     }
 
 }

@@ -9,7 +9,7 @@ public class MyHelper {
      *
      * @param nums int array
      */
-    public static void p(int[] nums) {
+    public static void pa(int[] nums) {
         for (int num : nums) {
             System.out.println(num);
         }
@@ -26,5 +26,8 @@ public class MyHelper {
         System.out.println("Username is: " + userName);  // Output user input
     }
 
+    public static void p(int i) {
+        System.out.println(i);
+    }
 
 }
