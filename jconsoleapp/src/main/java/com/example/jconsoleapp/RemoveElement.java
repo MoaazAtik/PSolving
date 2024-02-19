@@ -10,39 +10,43 @@ public class RemoveElement {
         int val = 2;
         int[] nums = {0, 1, 2, 2, 3, 0, 4, 2};
 
+//        int val = 2;
+//        int[] nums = {0, 1, 2, 2, 2, 0, 4, 2};
+
         return removeElement(nums, val);
     }
 
     public static int removeElement(int[] nums, int val) {
         int v = 0;
+        int l = nums.length - 1;
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i <= l; i++) {
             if (nums[i] == val) {
-                int l = nums.length - 1;
                 while (l > i && nums[l] == val) {
+                    v++;
                     l--;
                 }
                 nums[i] = nums[l];
                 nums[l] = val;
                 v++;
+                l--;
             }
         }
-//
-//        for (int i = 0; i < nums.length; i++) {
-//            if (nums[i] == val) {
-//                for (int l = nums.length - 1; l > i; l--) {
-//                    if (nums[l] != val) {
-//                        nums[i] = nums[l];
-//                    }
-//                }
-//                v++;
-//            }
-//        }
 
 
         MyHelper.pa(nums);
         MyHelper.p(11111);
         MyHelper.p(nums.length - v);
         return nums.length - v;
+
+        // From Leetcode
+//        int n = 0;
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] != val) {
+//                nums[n] = nums[i];
+//                n++;
+//            }
+//        }
+//        return n;
     }
 }
