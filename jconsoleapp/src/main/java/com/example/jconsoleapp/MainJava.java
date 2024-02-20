@@ -9,7 +9,8 @@ public class MainJava {
 
 //        MergeSortedArray.preMerge();
 //        RemoveElement.preRemoveElement();
-        p(RemoveDuplicatesFromSortedArray.preRemoveDuplicates());
+//        p(RemoveDuplicatesFromSortedArray.preRemoveDuplicates());
+        p(RemoveDuplicatesFromSortedArrayII.preRemoveDuplicates());
 
         System.out.println("\n\n\nHello World!");
     }
