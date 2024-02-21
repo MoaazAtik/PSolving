@@ -1,6 +1,6 @@
 package com.example.jconsoleapp;
 
-// #Leetcode-27
+// #Leetcode-27 #L27
 public class RemoveElement {
 
     public static int preRemoveElement() {
@@ -27,7 +27,7 @@ public class RemoveElement {
                     l--;
                 }
                 nums[i] = nums[l];
-                nums[l] = val;
+                nums[l] = val; // not needed
                 v++;
                 l--;
             }
