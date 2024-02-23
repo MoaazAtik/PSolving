@@ -11,8 +11,8 @@ public class MainJava {
 //        RemoveElement.preRemoveElement();
 //        p(RemoveDuplicatesFromSortedArray.preRemoveDuplicates());
 //        p(RemoveDuplicatesFromSortedArrayII.preRemoveDuplicates());
-        p(MajorityElement.preMajorityElement());
+//        p(MajorityElement.preMajorityElement());
+        RotateArray.preRotate();
 
-//        System.out.println("\n\n\nHello World!");
     }
 }

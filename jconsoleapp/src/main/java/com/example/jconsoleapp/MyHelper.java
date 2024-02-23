@@ -16,6 +16,18 @@ public class MyHelper {
     }
 
     /**
+     * Print array elements in one line
+     *
+     * @param nums int array
+     */
+    public static void pal(int[] nums) {
+        for (int num : nums) {
+            System.out.print(num + "  ");
+        }
+        System.out.println();
+    }
+
+    /**
      * Get user input
      */
     public static void s() {
@@ -27,6 +39,10 @@ public class MyHelper {
     }
 
     public static void p(int i) {
+        System.out.println(i);
+    }
+
+    public static void p(Object i) {
         System.out.println(i);
     }
 
