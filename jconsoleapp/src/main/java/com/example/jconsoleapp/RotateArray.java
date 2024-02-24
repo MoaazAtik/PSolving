@@ -4,9 +4,9 @@ package com.example.jconsoleapp;
 public class RotateArray {
 
     public static void preRotate() {
-//        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
 //        int k = 3;
-//        int k = 2;
+        int k = 2;
 //        int k = 1;
 //        int k = 6;
 //        int k = 0;
@@ -15,13 +15,18 @@ public class RotateArray {
 //        int[] nums = {-1, -100, 3, 99};
 //        int k = 2;
 
-        int[] nums = {1, 2, 3};
-        int k = 2;
+//        int[] nums = {1, 2, 3};
+//        int k = 2;
+//        int[] nums = {1, 2};
+//        int k = 3;
 
 //        wRotate(nums, k);
 //        rotate(nums, k);
+//        eRotate(nums, k);
+//        e2Rotate(nums, k);
 //        wRotate2(nums, k);
-        rotate2(nums, k);
+//        rotate2(nums, k);
+        rotate2v2(nums, k);
     }
 
     // X* Wrong Rotate: Fails {1, 2} k = 3. Expected output {2, 1}
@@ -84,6 +89,38 @@ public class RotateArray {
         MyHelper.pal(nums);
     }
 
+    // Runtime: 2ms - Memory: 57.0mb
+    // Enhanced rotate
+    public static void eRotate(int[] nums, int k) {
+
+        k = k % nums.length;
+
+        int[] a = new int[nums.length];
+        for (int i = 0; i < nums.length; i++)
+            a[i] = nums[i];
+
+        for (int i = 0; i < nums.length; i++) {
+            int p = (i + k) % nums.length;
+            nums[p] = a[i];
+        }
+
+        MyHelper.pal(nums);
+    }
+
+    // Runtime: 2ms - Memory: 56.7mb
+    // Enhanced rotate
+    public static void e2Rotate(int[] nums, int k) {
+
+        int[] a = new int[nums.length];
+        for (int i = 0; i < nums.length; i++)
+            a[(i + k) % nums.length] = nums[i];
+
+        for (int i = 0; i < nums.length; i++)
+            nums[i] = a[i];
+
+        MyHelper.pal(nums);
+    }
+
     // Time Limit Exceeded
     public static void wRotate2(int[] nums, int k) {
 
@@ -105,59 +142,71 @@ public class RotateArray {
         MyHelper.pal(nums);
     }
 
-    // Runtime: -ms - Memory: -.-mb
+    // Runtime: 2ms - Memory: 57.4mb
     public static void rotate2(int[] nums, int k) {
 
         k = k % nums.length;
 
-        int k1 = k;
+        int f = 0;
         int l = nums.length - 1;
-
-        while (k1 > 0) {
-            int temp = nums[k1 - 1];
-            nums[k1 - 1] = nums[l];
+        while (f < l) {
+            int temp = nums[f];
+            nums[f] = nums[l];
             nums[l] = temp;
-            k1--;
+            f++;
             l--;
         }
 
-        k1 = k;
-        while (k1 > 0) {
-            l = nums.length - 1;
-            int temp = nums[l];
-            while (l > k) {
-                nums[l] = nums[l - 1];
-                l--;
-            }
+        f = 0;
+        l = k - 1;
+        while (f < l) {
+            int temp = nums[f];
+            nums[f] = nums[l];
             nums[l] = temp;
-            k1--;
+            f++;
+            l--;
+        }
+
+        f = k;
+        l = nums.length - 1;
+        while (f < l) {
+            int temp = nums[f];
+            nums[f] = nums[l];
+            nums[l] = temp;
+            f++;
+            l--;
         }
 
         MyHelper.pal(nums);
     }
 
-    // Runtime: -ms - Memory: -.-mb
-    public static void rotate2v2(int[] nums, int k) {
+    // Runtime: 0ms (Beats 100.00% of users with Java) O(n) - Memory: 57.4mb O(1)
+    // *B (Best approach)
 
+    /**
+     * Reverse the array, reverse the first half, reverse the last half.
+     */
+    public static void rotate2v2(int[] nums, int k) {
         k = k % nums.length;
 
-        for (int k1 = k, l = nums.length - 1; k1 > 0; k1--, l--) {
-            int temp = nums[k1 - 1];
-            nums[k1 - 1] = nums[l];
-            nums[l] = temp;
-        }
-
-        for (int k1 = k; k1 > 0; k1--) {
-            int l = nums.length - 1;
-            int temp = nums[l];
-            while (l > k) {
-                nums[l] = nums[l - 1];
-                l--;
-            }
-            nums[l] = temp;
-        }
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
 
         MyHelper.pal(nums);
+    }
+
+    /**
+     * for {@link #rotate2v2(int[], int)}
+     */
+    private static void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
     }
 
 }
