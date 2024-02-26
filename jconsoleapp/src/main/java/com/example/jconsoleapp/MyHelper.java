@@ -56,7 +56,16 @@ public class MyHelper {
      */
     public static int negOrPosBinaryToInt(String binaryString) {
 //        int i = new BigInteger("11111111111111111111111111111111", 2).intValue();
+        // OR
+//        int i = ~0b0;
+
 //        int i = new BigInteger("00000000000000000000000000000001", 2).intValue();
+        // OR
+//        int i = 0b1;
+
+//        int i = new BigInteger("11111111111111111111111111111110", 2).intValue();
+        // OR
+//        int i = ~0b1;
 //        MyHelper.p("i = " + i);
 
         return new BigInteger(binaryString, 2).intValue();

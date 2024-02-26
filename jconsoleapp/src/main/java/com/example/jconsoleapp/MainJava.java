@@ -13,7 +13,8 @@ public class MainJava {
 //        p(RemoveDuplicatesFromSortedArrayII.preRemoveDuplicates());
 //        p(MajorityElement.preMajorityElement());
 //        RotateArray.preRotate();
-        p(ReverseBits.preReverseBits());
+//        p(ReverseBits.preReverseBits());
+        p(NumberOf1Bits.preHammingWeight());
 
     }
 }
