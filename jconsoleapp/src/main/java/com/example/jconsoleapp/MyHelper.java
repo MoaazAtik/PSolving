@@ -16,6 +16,12 @@ public class MyHelper {
         }
     }
 
+    public static void pa(Object[] objects) {
+        for (Object o : objects) {
+            System.out.println(o);
+        }
+    }
+
     /**
      * Print array elements in one line
      *
@@ -28,12 +34,34 @@ public class MyHelper {
         System.out.println();
     }
 
+    public static void pal(char[] chars) {
+        for (int c : chars) {
+            System.out.print(c + "  ");
+        }
+        System.out.println();
+    }
+
+    public static void pal(Object[] objects) {
+        for (Object o : objects) {
+            System.out.print(o + "_");
+        }
+        System.out.println();
+    }
+
     public static void p(int i) {
         System.out.println(i);
     }
 
     public static void p(Object i) {
         System.out.println(i);
+    }
+
+    public static void pl(int i) {
+        System.out.print(i + "  ");
+    }
+
+    public static void pl(Object i) {
+        System.out.print(i + "  ");
     }
 
 

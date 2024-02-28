@@ -14,7 +14,8 @@ public class MainJava {
 //        p(MajorityElement.preMajorityElement());
 //        RotateArray.preRotate();
 //        p(ReverseBits.preReverseBits());
-        p(NumberOf1Bits.preHammingWeight());
+//        p(NumberOf1Bits.preHammingWeight());
+        WordFrequency.preWordFrequency();
 
     }
 }
