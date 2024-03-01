@@ -15,7 +15,8 @@ public class MainJava {
 //        RotateArray.preRotate();
 //        p(ReverseBits.preReverseBits());
 //        p(NumberOf1Bits.preHammingWeight());
-        WordFrequency.preWordFrequency();
+//        WordFrequency.preWordFrequency();
+        p(ValidPalindrome.preIsPalindrome());
 
     }
 }

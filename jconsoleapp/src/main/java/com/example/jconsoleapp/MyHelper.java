@@ -35,9 +35,9 @@ public class MyHelper {
     }
 
     public static void pal(char[] chars) {
-        for (int c : chars) {
+//        for (int c : chars)
+        for (char c : chars)
             System.out.print(c + "  ");
-        }
         System.out.println();
     }
 
