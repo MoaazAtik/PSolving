@@ -1,104 +1,96 @@
 package com.example.jconsoleapp;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.TreeMap;
-import java.util.function.BiFunction;
-import java.util.function.Function;
+import java.util.TreeSet;
 
 // #L192
 public class WordFrequency {
 
     public static void preWordFrequency() {
-        String input = "the day is sunny the the\n" +
-                "the   sunny is is";
-//                "the   sunny is is";
+//        String input = "the day is sunny the the\nthe sunny is is";
 
-        MyHelper.p("Original input: " + input + "\n");
+        String input = "the day is sunny is is the the\nthe   sunny is is";
+//        String input = "the day is sunny is is the the\nthe   sunny is ";
 
-        wordFrequency(input);
+        MyHelper.p("Original input: \n" + input + "\n");
+
+//        wordFrequency(input);
 //        wordFrequency2(input);
+        wordFrequencyC(input);
     }
 
+    /**
+     * {@code input.toCharArray()}, {@code StringBuilder.append}, {@code TreeSet}, {@code Comparator}, {@code Character.isWhitespace}, {@code map.merge(word, 1, Integer::sum);}, {@code Map.Entry<String, Integer>}, {@code .compareTo}
+     */
     private static void wordFrequency(String input) {
+        // turn string input into char array
         char[] chars = input.toCharArray();
-        Map<String, Integer> words = new HashMap<>();
 
-//        Map<String, Integer> words = new Hashtable<>(); // Doesn't maintain Order (like HashSet)
-//        Map<String, Integer> words = new HashMap<>(); // Doesn't maintain Order (like HashSet)
-//        Map<String, Integer> words = new LinkedHashMap<>(); // Maintains Adding Order of Keys (like LinkedHashSet)
-//        Map<String, Integer> words = new TreeMap<>(); // Maintains Natural Order (sorts Alphabetically or numeric) of Keys (like TreeSet)
+        // split words from char array, and fill them into a HashMap to count them
+        Map<String, Integer> words = new HashMap<>();
         for (int i = 0; i < chars.length; i++) {
             // get word
-            String word = "";
+            StringBuilder wordBuilder = new StringBuilder();
             while (i < chars.length && !Character.isWhitespace(chars[i])) {
-                MyHelper.pl(Character.valueOf(chars[i]));
-                word = String.format("%s%s", word, chars[i]);
-//                word = word + chars[i];
+//                MyHelper.pl(Character.valueOf(chars[i]));
+                wordBuilder.append(chars[i]);
                 i++;
             }
+            String word = wordBuilder.toString();
             // put word in words map
             if (!Objects.equals(word, ""))
-                if (words.get(word) == null) {
-                    words.put(word, 1);
-                } else {
-                    words.put(word, words.get(word) + 1);
-                }
-            MyHelper.p(words.get(word));
+                words.merge(word, 1, Integer::sum);
+            // OR
+//                if (words.get(word) == null)
+//                    words.put(word, 1);
+//                else
+//                    words.put(word, words.get(word) + 1);
 
-//            Collections.synchronizedSortedMap(words);
-//            Collections.unmodifiableSortedMap(words);
-//            Collections.sort(list);
-
-//            words.get(word); //get value
-//            words.entrySet(); // get all keys and values as a Set of Map.Entry
-//            words.keySet(); // get all keys as a Set
-//            words.values(); // get all values as a Collection
-
-//            words.containsKey(word);
-//            words.containsValue(1);
-
-//        Character.isWhitespace();
-//        Character.valueOf();
-
-//        Character.isSpaceChar();
-//        Character.LINE_SEPARATOR
-//        Character.SPACE_SEPARATOR
-//        Character.PARAGRAPH_SEPARATOR
-//        Character.DIRECTIONALITY_PARAGRAPH_SEPARATOR
-// the Unicode (in ASCII) value of the space character is 32, newline character is 10 (creates line breaks)
-
-//                MyHelper.pl(chars[i]);
+//            MyHelper.p(words.get(word));
         }
-        
-        MyHelper.p(words.entrySet());
+//        MyHelper.p(words.entrySet());
 
-        int[] valuesArray = new int[words.size()];
-//        for (String w : words.keySet()) {
-//        for (int v : words.values()) {
-//        for (Iterator<Integer> iterator = words.values().iterator(); iterator.hasNext(); ) {
 
-        // get the Values into an array. sort the array
-        for (int i = 0; i < words.size(); i++) {
-//            int v = iterator.next();
+        // sort words (with a List or TreeSet)
+        TreeSet<Map.Entry<String, Integer>> sortedEntries = new TreeSet<>(new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
+//                int res = e1.getValue().compareTo(e2.getValue()); // Ascending order
+                int res = e2.getValue().compareTo(e1.getValue()); // Descending order
+                return res != 0 ? res : 1;
+                /*
+                The returned value (res) from Integer.compare(), x.compareTo() (from Integer class) or compare() (from Comparator interface:
+                if e2 > e1 res is positive, if e2 = e1 res is 0, if e2 > e1 res is negative.
 
-//            MyHelper.pl(v);
-        }
+                If the values are equal aka, res is 0, I ensured a stable ordering by returning 1.
+                Otherwise, if I returned 0 when the values are equals (return res != 0 ? res : 0   i.e.,  return res), only one of them will be added to the map, because the other would be considered as Duplicates.
+                If values are equal, another way to handle them is to compare *Keys, but it is not what I actually want in this map.
+//                return res == 0 ? e2.getKey().compareTo(e1.getKey()) : res;
+                 */
+            }
+        });
+        sortedEntries.addAll(words.entrySet());
 
-//        words.keySet().toArray();
-//        words.values().toArray();
+        // OR
+//        List<Map.Entry<String, Integer>> sortedEntries = new ArrayList<>(words.entrySet());
+//        sortedEntries.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));  // Descending order
+//        sortedEntries.sort((entry1, entry2) -> entry1.getValue().compareTo(entry2.getValue()));  // Ascending order
 
+
+        // print words
+        for (Map.Entry<String, Integer> entry : sortedEntries)
+            System.out.println(entry.getKey() + " " + entry.getValue());
     }
 
+
+    /**
+     * {@link String#split(String)}, {@link HashMap}, {@link HashMap#containsKey(Object)}, {@link List#sort(Comparator)}, {@link Comparator}, {@link Map.Entry}, {@link ArrayList#stream()} {@code list.stream().map(entry -> ...).forEach(System.out::println);}
+     */
     private static void wordFrequency2(String input) {
         // get words
         /*
@@ -109,20 +101,24 @@ public class WordFrequency {
         // input is no longer referring to the same variable of the passed argument since it has been reassigned by the following line
         // remove line breaks
 //        input = input.replace('\n', ' ').replace('\r', ' ');
-        // multiple spaces in input wont work
+        // multiple spaces in input wont work if " " or "\\s" is used instead of "\\s+"
 //        String[] words = input.split(" ");
         // or
          */
         String[] words = input.split("\\s+");
-        MyHelper.pal(words);
+//        MyHelper.pal(words);
 
         // count words
         Map<String, Integer> map = new HashMap<>();
+
         for (String word : words) {
             if (!map.containsKey(word))
                 map.put(word, 1);
             else
                 map.put(word, map.get(word) + 1);
+
+            // OR
+//            map.merge(word, 1, Integer::sum);
         }
         // OR
 //        for (String word : words) {
@@ -134,21 +130,43 @@ public class WordFrequency {
 //                map.put(word, count);
 //            }
 //        }
-        MyHelper.p(map);
+
+//        MyHelper.p(map);
 
         // sort words
         List<Map.Entry<String, Integer>> sortedEntries = new ArrayList<>(map.entrySet());
         sortedEntries.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
 
         // print words
-        for (Map.Entry<String, Integer> entry: sortedEntries){
+        for (Map.Entry<String, Integer> entry : sortedEntries)
             System.out.println(entry.getKey() + " " + entry.getValue());
-        }
+        // OR
+//        sortedEntries.stream().map(entry -> entry.getKey() + " " + entry.getValue()).forEach(System.out::println);
     }
 
-    // Second solution: use TreeMap because it is sorted instead of HashMap, with <Integer, String>
+    /**
+     * A better Combo of {@link WordFrequency#wordFrequency(String)} and {@link WordFrequency#wordFrequency2(String)}
+     */
+    private static void wordFrequencyC(String input) {
+        // get words
+        String[] words = input.split("\\s+");
 
-    // Bash
+        // count words
+        Map<String, Integer> wordsCounted = new HashMap<>();
+        for (String word : words)
+            wordsCounted.merge(word, 1, Integer::sum);
+
+        // sort words
+        List<Map.Entry<String, Integer>> wordsSorted = new ArrayList<>(wordsCounted.entrySet());
+        wordsSorted.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue()));
+
+        // print words
+        for (Map.Entry<String, Integer> word : wordsSorted)
+            System.out.println(word.getKey() + " " + word.getValue());
+    }
+
+
+    // Bash (Not tested)
     /*
     Solution 1
     cat words.txt | tr " " "\n" | tr -s "\n" | sort | uniq -c | sort -r | awk '{print $2" "$1}'
