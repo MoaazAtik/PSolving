@@ -2,6 +2,8 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
+import com.example.l75ace.MaximumAverageSubarrayI;
+
 public class MainJava {
 
     public static void main(String[] args) {
@@ -16,7 +18,8 @@ public class MainJava {
 //        p(ReverseBits.preReverseBits());
 //        p(NumberOf1Bits.preHammingWeight());
 //        WordFrequency.preWordFrequency();
-        p(ValidPalindrome.preIsPalindrome());
+//        p(ValidPalindrome.preIsPalindrome());
+        MyHelper.p(MaximumAverageSubarrayI.preFindMaxAverage());
 
     }
 }
