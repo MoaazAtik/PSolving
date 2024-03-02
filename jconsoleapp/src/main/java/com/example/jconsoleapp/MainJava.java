@@ -2,6 +2,7 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
+import com.example.l75ace.FindTheHighestAltitude;
 import com.example.l75ace.MaximumAverageSubarrayI;
 
 public class MainJava {
@@ -19,7 +20,8 @@ public class MainJava {
 //        p(NumberOf1Bits.preHammingWeight());
 //        WordFrequency.preWordFrequency();
 //        p(ValidPalindrome.preIsPalindrome());
-        MyHelper.p(MaximumAverageSubarrayI.preFindMaxAverage());
+//        MyHelper.p(MaximumAverageSubarrayI.preFindMaxAverage());
+        FindTheHighestAltitude.preLargestAltitude();
 
     }
 }
