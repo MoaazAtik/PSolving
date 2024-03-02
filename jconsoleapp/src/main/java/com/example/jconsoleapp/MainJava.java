@@ -5,6 +5,7 @@ import static com.example.jconsoleapp.MyHelper.p;
 import com.example.l75ace.FindTheDifferenceOfTwoArrays;
 import com.example.l75ace.FindTheHighestAltitude;
 import com.example.l75ace.MaximumAverageSubarrayI;
+import com.example.l75ace.RemovingStarsFromAString;
 
 public class MainJava {
 
@@ -23,7 +24,8 @@ public class MainJava {
 //        p(ValidPalindrome.preIsPalindrome());
 //        MyHelper.p(MaximumAverageSubarrayI.preFindMaxAverage());
 //        FindTheHighestAltitude.preLargestAltitude();
-        FindTheDifferenceOfTwoArrays.preFindDifference();
+//        FindTheDifferenceOfTwoArrays.preFindDifference();
+        RemovingStarsFromAString.preRemoveStars();
 
     }
 }
