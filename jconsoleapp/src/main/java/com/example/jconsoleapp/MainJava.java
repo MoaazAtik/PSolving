@@ -2,6 +2,7 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
+import com.example.l75ace.FindTheDifferenceOfTwoArrays;
 import com.example.l75ace.FindTheHighestAltitude;
 import com.example.l75ace.MaximumAverageSubarrayI;
 
@@ -21,7 +22,8 @@ public class MainJava {
 //        WordFrequency.preWordFrequency();
 //        p(ValidPalindrome.preIsPalindrome());
 //        MyHelper.p(MaximumAverageSubarrayI.preFindMaxAverage());
-        FindTheHighestAltitude.preLargestAltitude();
+//        FindTheHighestAltitude.preLargestAltitude();
+        FindTheDifferenceOfTwoArrays.preFindDifference();
 
     }
 }
