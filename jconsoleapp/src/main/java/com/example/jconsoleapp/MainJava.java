@@ -2,10 +2,7 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
-import com.example.l75ace.FindTheDifferenceOfTwoArrays;
-import com.example.l75ace.FindTheHighestAltitude;
-import com.example.l75ace.MaximumAverageSubarrayI;
-import com.example.l75ace.RemovingStarsFromAString;
+import com.example.l75ace.NumberOfRecentCalls;
 
 public class MainJava {
 
@@ -25,7 +22,8 @@ public class MainJava {
 //        MyHelper.p(MaximumAverageSubarrayI.preFindMaxAverage());
 //        FindTheHighestAltitude.preLargestAltitude();
 //        FindTheDifferenceOfTwoArrays.preFindDifference();
-        RemovingStarsFromAString.preRemoveStars();
+//        RemovingStarsFromAString.preRemoveStars();
+        NumberOfRecentCalls.preRecentCounter();
 
     }
 }
