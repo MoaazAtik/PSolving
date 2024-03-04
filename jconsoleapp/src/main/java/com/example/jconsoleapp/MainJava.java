@@ -2,6 +2,7 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
+import com.example.l75ace.DeleteTheMiddleNodeOfALinkedList;
 import com.example.l75ace.NumberOfRecentCalls;
 
 public class MainJava {
@@ -23,7 +24,8 @@ public class MainJava {
 //        FindTheHighestAltitude.preLargestAltitude();
 //        FindTheDifferenceOfTwoArrays.preFindDifference();
 //        RemovingStarsFromAString.preRemoveStars();
-        NumberOfRecentCalls.preRecentCounter();
+//        NumberOfRecentCalls.preRecentCounter();
+        DeleteTheMiddleNodeOfALinkedList.preDeleteMiddle();
 
     }
 }
