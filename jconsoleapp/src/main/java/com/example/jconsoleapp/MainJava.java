@@ -2,6 +2,7 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
+import com.example.l75ace.BinaryTreeRightSideView;
 import com.example.l75ace.DeleteTheMiddleNodeOfALinkedList;
 import com.example.l75ace.MaximumDepthOfBinaryTree;
 import com.example.l75ace.NumberOfRecentCalls;
@@ -27,7 +28,8 @@ public class MainJava {
 //        RemovingStarsFromAString.preRemoveStars();
 //        NumberOfRecentCalls.preRecentCounter();
 //        DeleteTheMiddleNodeOfALinkedList.preDeleteMiddle();
-        MaximumDepthOfBinaryTree.preMaxDepth();
+//        MaximumDepthOfBinaryTree.preMaxDepth();
+        BinaryTreeRightSideView.preRightSideView();
 
     }
 }

@@ -48,6 +48,10 @@ public class MyHelper {
         System.out.println();
     }
 
+    public static void p() {
+        System.out.println();
+    }
+
     public static void p(int i) {
         System.out.println(i);
     }
