@@ -3,7 +3,9 @@ package com.example.l75ace;
 import static com.example.jconsoleapp.MyHelper.p;
 import static com.example.jconsoleapp.MyHelper.pl;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -22,14 +24,122 @@ public class BinaryTreeRightSideView {
 //        p(getTreeNodesToListNullsTrimmed(root));
 
         printTreeNodesBfsNullsTrimmed(root);
-        p();
 
-//        p(rightSideView(root));
+        p(rightSideView(root));
+        p(rightSideView2(root));
+        p(rightSideView3(root));
     }
 
-    private static List<Integer> rightSideView(TreeNode root) {
+    // probably it can be solved by keeping track of the Level too
 
-        return null;
+    /**
+     * 1ms - 41.8mb
+     * 2 Queues, first queue element Watcher
+     */
+    private static List<Integer> rightSideView(TreeNode root) {
+        //                 1
+        //     2                     3
+        //        5                      4
+        //      7
+        List<Integer> rightView = new ArrayList<>();
+        if (root == null)
+            return rightView;
+
+        Queue<TreeNode> queue1 = new LinkedList<>();
+        Queue<TreeNode> queue2 = new LinkedList<>();
+        queue1.offer(root);
+
+//        while (!queue1.isEmpty() || !queue2.isEmpty()) { //Condition '!queue2.isEmpty()' is always 'false' when reached
+        while (!queue1.isEmpty()) {
+            boolean firstElementOfQueue = true;
+            while (!queue1.isEmpty()) {
+                TreeNode currentRoot = queue1.poll();
+                if (firstElementOfQueue) {
+                    rightView.add(currentRoot.val);
+                    firstElementOfQueue = false;
+                }
+                if (currentRoot.right != null)
+                    queue2.offer(currentRoot.right);
+                if (currentRoot.left != null)
+                    queue2.offer(currentRoot.left);
+            }
+            firstElementOfQueue = true;
+            while (!queue2.isEmpty()) {
+                TreeNode currentRoot = queue2.poll();
+                if (firstElementOfQueue) {
+                    rightView.add(currentRoot.val);
+                    firstElementOfQueue = false;
+                }
+                if (currentRoot.right != null)
+                    queue1.offer(currentRoot.right);
+                if (currentRoot.left != null)
+                    queue1.offer(currentRoot.left);
+            }
+        }
+
+        return rightView;
+    }
+
+    /**
+     * *B 1ms - 42.1mb
+     * first queue element Watcher
+     */
+    private static List<Integer> rightSideView2(TreeNode root) {
+        //                 1
+        //     2                     3
+        //        5                      4
+        //      7
+        List<Integer> rightView = new ArrayList<>();
+        if (root == null)
+            return rightView;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int currentSize = queue.size();
+            boolean firstElementOfQueue = true;
+            for (int i = 0; i < currentSize; i++) {
+                TreeNode currentRoot = queue.poll();
+                if (firstElementOfQueue) {
+                    rightView.add(currentRoot.val);
+                    firstElementOfQueue = false;
+                }
+                if (currentRoot.right != null)
+                    queue.offer(currentRoot.right);
+                if (currentRoot.left != null)
+                    queue.offer(currentRoot.left);
+            }
+        }
+
+        return rightView;
+    }
+
+    /**
+     * 1ms - 41.9mb
+     * YT modified.
+     */
+    private static List<Integer> rightSideView3(TreeNode root) {
+        List<Integer> rightView = new ArrayList<>();
+        if (root == null)
+            return rightView;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode rightSide = null;
+            int currentSize = queue.size();
+            for (int i = 0; i < currentSize; i++) {
+                TreeNode currentRoot = queue.poll();
+                rightSide = currentRoot;
+                if (currentRoot.left != null)
+                    queue.offer(currentRoot.left);
+                if (currentRoot.right != null)
+                    queue.offer(currentRoot.right);
+            }
+            rightView.add(rightSide.val);
+        }
+
+        return rightView;
     }
 
     // Definition for a binary tree node. (from Leetcode)
@@ -56,26 +166,20 @@ public class BinaryTreeRightSideView {
     private static TreeNode prePopulateTree() {
 //        Integer[] nodes = {1, 2, 3, null, 5, null, 4};
 //        return populateTreeBfs(nodes);
-
 //        Integer[] nodes = {1, null, 3};
 //        return populateTreeBfs(nodes);
-
 //        Integer[] nodes = {};
 //        return populateTreeBfs(nodes);
 
 
 //        Integer[] nodes = {1, 2, null};
 //        return populateTreeBfs(nodes);
-
 //        Integer[] nodes = {1, 2, 3, null, null, 4, null};
 //        return populateTreeBfs(nodes);
-
 //        Integer[] nodes = {1, 2, 3, null, 4, null, null};
 //        return populateTreeBfs(nodes);
-
 //        Integer[] nodes = {1, 2, 3, 4, null, null, null};
 //        return populateTreeBfs(nodes);
-
         Integer[] nodes = {1, 2, 3, 4, 5, null, null, null, null, null, 6, 7, 8, 9, null, 10};
         return populateTreeBfs(nodes);
     }
