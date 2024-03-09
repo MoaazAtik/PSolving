@@ -4,6 +4,7 @@ import static com.example.jconsoleapp.MyHelper.p;
 
 import com.example.l75ace.BinaryTreeRightSideView;
 import com.example.l75ace.DeleteTheMiddleNodeOfALinkedList;
+import com.example.l75ace.KeysAndRooms;
 import com.example.l75ace.MaximumDepthOfBinaryTree;
 import com.example.l75ace.NumberOfRecentCalls;
 import com.example.l75ace.SearchInABinarySearchTree;
@@ -31,7 +32,8 @@ public class MainJava {
 //        DeleteTheMiddleNodeOfALinkedList.preDeleteMiddle();
 //        MaximumDepthOfBinaryTree.preMaxDepth();
 //        BinaryTreeRightSideView.preRightSideView();
-        SearchInABinarySearchTree.preSearchBST();
+//        SearchInABinarySearchTree.preSearchBST();
+        KeysAndRooms.preCanVisitAllRooms();
 
     }
 }
