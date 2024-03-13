@@ -68,6 +68,54 @@ public class MyHelper {
         System.out.print(i + "  ");
     }
 
+    /**
+     * print Matrix / 2D array
+     */
+    public static void paPlain(char[][] maze) {
+        for (char[] row : maze) {
+            for (char cell : row) {
+                System.out.print(cell + "  ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * print Matrix / 2D array with headers
+     */
+    public static void pa(char[][] matrix) {
+        System.out.print("   ");
+        for (int col = 0; col < matrix[0].length; col++) {
+            System.out.print(col + "  ");
+        }
+        p("");
+
+        for (int r = 0; r < matrix.length; r++) {
+            System.out.print(r + "  ");
+            for (int c = 0; c < matrix[r].length; c++) {
+                System.out.print(matrix[r][c] + "  ");
+            }
+            p();
+        }
+    }
+
+    public static void pa(Integer[][] matrix) {
+        System.out.print("   ");
+        for (int col = 0; col < matrix[0].length; col++) {
+            System.out.print(col + "    ");
+        }
+        p("");
+
+        for (int r = 0; r < matrix.length; r++) {
+            System.out.print(r + "  ");
+            for (int c = 0; c < matrix[r].length; c++) {
+                System.out.print(matrix[r][c] + "  ");
+            }
+            p();
+        }
+    }
+
+
 
     /**
      * Get user input
