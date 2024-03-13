@@ -69,6 +69,16 @@ public class MyHelper {
     }
 
     /**
+     * print indexes of array in one line
+     */
+    public static void pi(int size) {
+        for (int i = 0; i < size; i++) {
+            System.out.print(i + "  ");
+        }
+        System.out.println();
+    }
+
+    /**
      * print Matrix / 2D array
      */
     public static void paPlain(char[][] maze) {
@@ -114,7 +124,6 @@ public class MyHelper {
             p();
         }
     }
-
 
 
     /**
