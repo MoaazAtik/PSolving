@@ -2,6 +2,7 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
+import com.example.l75ace.GuessNumberHigherOrLower;
 import com.example.l75ace.KthLargestElementInAnArray;
 import com.example.l75ace.NearestExitFromEntranceInMaze;
 
@@ -31,7 +32,8 @@ public class MainJava {
 //        SearchInABinarySearchTree.preSearchBST();
 //        KeysAndRooms.preCanVisitAllRooms();
 //        NearestExitFromEntranceInMaze.preNearestExit();
-        KthLargestElementInAnArray.preFindKthLargest();
+//        KthLargestElementInAnArray.preFindKthLargest();
+        GuessNumberHigherOrLower.preGuessNumber();
 
     }
 }
