@@ -6,6 +6,7 @@ import com.example.l75ace.GuessNumberHigherOrLower;
 import com.example.l75ace.KthLargestElementInAnArray;
 import com.example.l75ace.LetterCombinationsOfAPhoneNumber;
 import com.example.l75ace.NearestExitFromEntranceInMaze;
+import com.example.l75ace.NthTribonacciNumber;
 
 public class MainJava {
 
@@ -35,7 +36,8 @@ public class MainJava {
 //        NearestExitFromEntranceInMaze.preNearestExit();
 //        KthLargestElementInAnArray.preFindKthLargest();
 //        GuessNumberHigherOrLower.preGuessNumber();
-        LetterCombinationsOfAPhoneNumber.preLetterCombinations();
+//        LetterCombinationsOfAPhoneNumber.preLetterCombinations();
+        NthTribonacciNumber.preTribonacci();
 
     }
 }
