@@ -4,6 +4,7 @@ import static com.example.jconsoleapp.MyHelper.p;
 
 import com.example.l75ace.GuessNumberHigherOrLower;
 import com.example.l75ace.KthLargestElementInAnArray;
+import com.example.l75ace.LetterCombinationsOfAPhoneNumber;
 import com.example.l75ace.NearestExitFromEntranceInMaze;
 
 public class MainJava {
@@ -33,7 +34,8 @@ public class MainJava {
 //        KeysAndRooms.preCanVisitAllRooms();
 //        NearestExitFromEntranceInMaze.preNearestExit();
 //        KthLargestElementInAnArray.preFindKthLargest();
-        GuessNumberHigherOrLower.preGuessNumber();
+//        GuessNumberHigherOrLower.preGuessNumber();
+        LetterCombinationsOfAPhoneNumber.preLetterCombinations();
 
     }
 }
