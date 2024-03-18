@@ -152,6 +152,7 @@ public class NthTribonacciNumber {
 
     /**
      * L Iterative. Array.
+     * It's a Dynamic Programming, Memoization, and Math question.
      */
     private static int tribonacci5(int n) {
         if (n <= 1) return n;
