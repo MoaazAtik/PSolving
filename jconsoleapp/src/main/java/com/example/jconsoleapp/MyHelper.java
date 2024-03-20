@@ -126,6 +126,40 @@ public class MyHelper {
     }
 
 
+    // Binary Tree Methods from BinaryTreeRightSideView Start:
+    // Recursive DFS print With null nodes
+    // Iterative BFS print Without null nodes
+    // Iterative BFS print With null nodes and Without Trimming null nodes at the end
+    // *B Iterative BFS print With null nodes and With Trimming trailing null nodes (like Leetcode)
+
+    // Iterative BFS. Get Tree nodes as List With null nodes and With Trimming trailing null nodes
+
+    // Definition for a Binary Tree Node. (from Leetcode)
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+    // Binary Tree Methods from BinaryTreeRightSideView End.
+
+
+    // Trie method at ImplementTrie_PrefixTree:
+    // Recursive DFS print Trie with HashMap With null nodes
+
+
     /**
      * Get user input
      */

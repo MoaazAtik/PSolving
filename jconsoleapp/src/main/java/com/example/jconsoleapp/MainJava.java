@@ -3,6 +3,7 @@ package com.example.jconsoleapp;
 import static com.example.jconsoleapp.MyHelper.p;
 
 import com.example.l75ace.GuessNumberHigherOrLower;
+import com.example.l75ace.ImplementTrie_PrefixTree;
 import com.example.l75ace.KthLargestElementInAnArray;
 import com.example.l75ace.LetterCombinationsOfAPhoneNumber;
 import com.example.l75ace.NearestExitFromEntranceInMaze;
@@ -39,7 +40,8 @@ public class MainJava {
 //        GuessNumberHigherOrLower.preGuessNumber();
 //        LetterCombinationsOfAPhoneNumber.preLetterCombinations();
 //        NthTribonacciNumber.preTribonacci();
-        UniquePaths.preUniquePaths();
+//        UniquePaths.preUniquePaths();
+        ImplementTrie_PrefixTree.preImplementTrie();
 
     }
 }

@@ -142,7 +142,7 @@ public class BinaryTreeRightSideView {
         return rightView;
     }
 
-    // Definition for a binary tree node. (from Leetcode)
+    // Definition for a Binary Tree Node. (from Leetcode)
     public static class TreeNode {
         int val;
         TreeNode left;
@@ -209,7 +209,7 @@ public class BinaryTreeRightSideView {
     }
 
 
-    // Recursive DFS With null nodes
+    // Recursive DFS print With null nodes
     private static void printTreeNodesDfsWNulls(TreeNode root) {
         if (root != null) {
             System.out.print(root.val + " ");
