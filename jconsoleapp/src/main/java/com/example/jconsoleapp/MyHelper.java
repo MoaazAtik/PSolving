@@ -125,6 +125,22 @@ public class MyHelper {
         }
     }
 
+    public static void pa(int[][] matrix) {
+        System.out.print("   ");
+        for (int col = 0; col < matrix[0].length; col++) {
+            System.out.print(col + "  ");
+        }
+        p("");
+
+        for (int r = 0; r < matrix.length; r++) {
+            System.out.print(r + "  ");
+            for (int c = 0; c < matrix[r].length; c++) {
+                System.out.print(matrix[r][c] + "  ");
+            }
+            p();
+        }
+    }
+
 
     // Binary Tree Methods from BinaryTreeRightSideView Start:
     // Recursive DFS print With null nodes
@@ -158,6 +174,11 @@ public class MyHelper {
 
     // Trie method at ImplementTrie_PrefixTree:
     // Recursive DFS print Trie with HashMap With null nodes
+
+
+    // Method to Convert 2D Array to 2D List in KeysAndRooms
+
+    // Comparing and Sorting methods in NonOverlappingIntervals and WordFrequency
 
 
     /**

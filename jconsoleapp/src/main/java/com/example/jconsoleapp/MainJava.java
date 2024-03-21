@@ -7,6 +7,7 @@ import com.example.l75ace.ImplementTrie_PrefixTree;
 import com.example.l75ace.KthLargestElementInAnArray;
 import com.example.l75ace.LetterCombinationsOfAPhoneNumber;
 import com.example.l75ace.NearestExitFromEntranceInMaze;
+import com.example.l75ace.NonOverlappingIntervals;
 import com.example.l75ace.NthTribonacciNumber;
 import com.example.l75ace.UniquePaths;
 
@@ -41,7 +42,8 @@ public class MainJava {
 //        LetterCombinationsOfAPhoneNumber.preLetterCombinations();
 //        NthTribonacciNumber.preTribonacci();
 //        UniquePaths.preUniquePaths();
-        ImplementTrie_PrefixTree.preImplementTrie();
+//        ImplementTrie_PrefixTree.preImplementTrie();
+        NonOverlappingIntervals.preEraseOverlapIntervals();
 
     }
 }
