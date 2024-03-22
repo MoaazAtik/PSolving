@@ -1,4 +1,4 @@
-package com.example.l75ace;
+package com.example.jconsoleapp.l75ace;
 
 import static com.example.jconsoleapp.MyHelper.p;
 import static com.example.jconsoleapp.MyHelper.pl;

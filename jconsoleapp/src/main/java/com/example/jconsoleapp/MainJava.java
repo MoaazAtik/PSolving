@@ -2,21 +2,14 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
-import com.example.l75ace.DailyTemperatures;
-import com.example.l75ace.GuessNumberHigherOrLower;
-import com.example.l75ace.ImplementTrie_PrefixTree;
-import com.example.l75ace.KthLargestElementInAnArray;
-import com.example.l75ace.LetterCombinationsOfAPhoneNumber;
-import com.example.l75ace.NearestExitFromEntranceInMaze;
-import com.example.l75ace.NonOverlappingIntervals;
-import com.example.l75ace.NthTribonacciNumber;
-import com.example.l75ace.UniquePaths;
+import com.example.jconsoleapp.l75ace.DailyTemperatures;
 
 public class MainJava {
 
     public static void main(String[] args) {
         System.out.println("Hello World!\n");
 
+        // Top Interview 150 - Must-do List for Interview Prep
 //        MergeSortedArray.preMerge();
 //        RemoveElement.preRemoveElement();
 //        p(RemoveDuplicatesFromSortedArray.preRemoveDuplicates());
@@ -28,6 +21,7 @@ public class MainJava {
 //        WordFrequency.preWordFrequency();
 //        p(ValidPalindrome.preIsPalindrome());
 //        MyHelper.p(MaximumAverageSubarrayI.preFindMaxAverage());
+        // LeetCode 75 - Ace Coding Interview with 75 Qs
 //        FindTheHighestAltitude.preLargestAltitude();
 //        FindTheDifferenceOfTwoArrays.preFindDifference();
 //        RemovingStarsFromAString.preRemoveStars();
