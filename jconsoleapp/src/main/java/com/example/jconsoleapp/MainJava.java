@@ -2,6 +2,7 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
+import com.example.l75ace.DailyTemperatures;
 import com.example.l75ace.GuessNumberHigherOrLower;
 import com.example.l75ace.ImplementTrie_PrefixTree;
 import com.example.l75ace.KthLargestElementInAnArray;
@@ -43,7 +44,8 @@ public class MainJava {
 //        NthTribonacciNumber.preTribonacci();
 //        UniquePaths.preUniquePaths();
 //        ImplementTrie_PrefixTree.preImplementTrie();
-        NonOverlappingIntervals.preEraseOverlapIntervals();
+//        NonOverlappingIntervals.preEraseOverlapIntervals();
+        DailyTemperatures.preDailyTemperatures();
 
     }
 }
