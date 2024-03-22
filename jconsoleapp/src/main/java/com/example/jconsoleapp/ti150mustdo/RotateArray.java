@@ -1,4 +1,6 @@
-package com.example.jconsoleapp;
+package com.example.jconsoleapp.ti150mustdo;
+
+import com.example.jconsoleapp.MyHelper;
 
 // #L189
 public class RotateArray {

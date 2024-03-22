@@ -1,4 +1,6 @@
-package com.example.jconsoleapp;
+package com.example.jconsoleapp.ti150mustdo;
+
+import com.example.jconsoleapp.MyHelper;
 
 // #Leetcode-88 #L88
 public class MergeSortedArray {

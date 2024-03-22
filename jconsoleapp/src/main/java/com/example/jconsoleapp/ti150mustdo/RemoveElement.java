@@ -1,4 +1,6 @@
-package com.example.jconsoleapp;
+package com.example.jconsoleapp.ti150mustdo;
+
+import com.example.jconsoleapp.MyHelper;
 
 // #Leetcode-27 #L27
 public class RemoveElement {

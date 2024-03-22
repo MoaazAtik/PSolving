@@ -1,4 +1,4 @@
-package com.example.jconsoleapp;
+package com.example.jconsoleapp.ti150mustdo;
 
 // #L169
 public class MajorityElement {

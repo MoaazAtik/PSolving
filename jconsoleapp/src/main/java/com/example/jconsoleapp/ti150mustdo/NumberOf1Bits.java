@@ -1,4 +1,6 @@
-package com.example.jconsoleapp;
+package com.example.jconsoleapp.ti150mustdo;
+
+import com.example.jconsoleapp.MyHelper;
 
 // #L191
 public class NumberOf1Bits {

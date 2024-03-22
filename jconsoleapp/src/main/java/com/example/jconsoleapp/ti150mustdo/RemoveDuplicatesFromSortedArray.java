@@ -1,4 +1,6 @@
-package com.example.jconsoleapp;
+package com.example.jconsoleapp.ti150mustdo;
+
+import com.example.jconsoleapp.MyHelper;
 
 // #Leetcode-26 (#L26)
 public class RemoveDuplicatesFromSortedArray {
