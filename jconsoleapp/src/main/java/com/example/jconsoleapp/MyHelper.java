@@ -1,6 +1,10 @@
 package com.example.jconsoleapp;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class MyHelper {
@@ -146,24 +150,52 @@ public class MyHelper {
     // Recursive DFS print With null nodes
     // Iterative BFS print Without null nodes
     // Iterative BFS print With null nodes and Without Trimming null nodes at the end
-    // *B Iterative BFS print With null nodes and With Trimming trailing null nodes (like Leetcode)
+    /**
+     * *B Iterative BFS print With null nodes and With Trimming trailing null nodes (like Leetcode)
+     */
+    public static void printTreeNodesBfsNullsTrimmed(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            p(null);
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode curr = queue.poll();
+            if (curr != null) {
+                result.add(curr.val);
+                queue.offer(curr.left);
+                queue.offer(curr.right);
+            } else {
+                result.add(null);
+            }
+        }
+        // Trim trailing nulls
+        int lastIndex = result.size() - 1;
+        while (lastIndex >= 0 && result.get(lastIndex) == null) {
+            result.remove(lastIndex);
+            lastIndex--;
+        }
+        p(result);
+    }
 
     // Iterative BFS. Get Tree nodes as List With null nodes and With Trimming trailing null nodes
 
     // Definition for a Binary Tree Node. (from Leetcode)
     public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
 
-        TreeNode() {
+        public TreeNode() {
         }
 
-        TreeNode(int val) {
+        public TreeNode(int val) {
             this.val = val;
         }
 
-        TreeNode(int val, TreeNode left, TreeNode right) {
+        public TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
             this.right = right;
