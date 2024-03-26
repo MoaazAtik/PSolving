@@ -6,6 +6,7 @@ import com.example.jconsoleapp.l75ace.DailyTemperatures;
 import com.example.jconsoleapp.ti150mustdo.ConvertSortedArrayToBinarySearchTree;
 import com.example.jconsoleapp.ti150mustdo.GameOfLife;
 import com.example.jconsoleapp.ti150mustdo.MaximumSubarray;
+import com.example.jconsoleapp.ti150mustdo.PalindromeNumber;
 
 public class MainJava {
 
@@ -26,7 +27,8 @@ public class MainJava {
 //        MyHelper.p(MaximumAverageSubarrayI.preFindMaxAverage());
 //        GameOfLife.preGameOfLife();
 //        ConvertSortedArrayToBinarySearchTree.preSortedArrayToBST();
-        MaximumSubarray.preMaxSubArray();
+//        MaximumSubarray.preMaxSubArray();
+        PalindromeNumber.preIsPalindrome();
 
         // LeetCode 75 - Ace Coding Interview with 75 Qs
 //        FindTheHighestAltitude.preLargestAltitude();
