@@ -9,49 +9,6 @@ import java.util.Scanner;
 
 public class MyHelper {
 
-    /**
-     * Print array elements
-     *
-     * @param nums int array
-     */
-    public static void pa(int[] nums) {
-        for (int num : nums) {
-            System.out.println(num);
-        }
-    }
-
-    public static void pa(Object[] objects) {
-        for (Object o : objects) {
-            System.out.println(o);
-        }
-    }
-
-    /**
-     * Print array elements in one line
-     *
-     * @param nums int array
-     */
-    public static void pal(int[] nums) {
-        for (int num : nums) {
-            System.out.print(num + "  ");
-        }
-        System.out.println();
-    }
-
-    public static void pal(char[] chars) {
-//        for (int c : chars)
-        for (char c : chars)
-            System.out.print(c + "  ");
-        System.out.println();
-    }
-
-    public static void pal(Object[] objects) {
-        for (Object o : objects) {
-            System.out.print(o + "_");
-        }
-        System.out.println();
-    }
-
     public static void p() {
         System.out.println();
     }
@@ -80,6 +37,23 @@ public class MyHelper {
             System.out.print(i + "  ");
         }
         System.out.println();
+    }
+
+    /**
+     * Print array elements
+     *
+     * @param nums int array
+     */
+    public static void pa(int[] nums) {
+        for (int num : nums) {
+            System.out.println(num);
+        }
+    }
+
+    public static void pa(Object[] objects) {
+        for (Object o : objects) {
+            System.out.println(o);
+        }
     }
 
     /**
@@ -143,6 +117,32 @@ public class MyHelper {
             }
             p();
         }
+    }
+
+    /**
+     * Print array elements in one line
+     *
+     * @param nums int array
+     */
+    public static void pal(int[] nums) {
+        for (int num : nums) {
+            System.out.print(num + "  ");
+        }
+        System.out.println();
+    }
+
+    public static void pal(char[] chars) {
+//        for (int c : chars)
+        for (char c : chars)
+            System.out.print(c + "  ");
+        System.out.println();
+    }
+
+    public static void pal(Object[] objects) {
+        for (Object o : objects) {
+            System.out.print(o + "_");
+        }
+        System.out.println();
     }
 
 

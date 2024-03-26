@@ -5,6 +5,7 @@ import static com.example.jconsoleapp.MyHelper.p;
 import com.example.jconsoleapp.l75ace.DailyTemperatures;
 import com.example.jconsoleapp.ti150mustdo.ConvertSortedArrayToBinarySearchTree;
 import com.example.jconsoleapp.ti150mustdo.GameOfLife;
+import com.example.jconsoleapp.ti150mustdo.MaximumSubarray;
 
 public class MainJava {
 
@@ -23,6 +24,10 @@ public class MainJava {
 //        WordFrequency.preWordFrequency();
 //        p(ValidPalindrome.preIsPalindrome());
 //        MyHelper.p(MaximumAverageSubarrayI.preFindMaxAverage());
+//        GameOfLife.preGameOfLife();
+//        ConvertSortedArrayToBinarySearchTree.preSortedArrayToBST();
+        MaximumSubarray.preMaxSubArray();
+
         // LeetCode 75 - Ace Coding Interview with 75 Qs
 //        FindTheHighestAltitude.preLargestAltitude();
 //        FindTheDifferenceOfTwoArrays.preFindDifference();
@@ -42,8 +47,6 @@ public class MainJava {
 //        ImplementTrie_PrefixTree.preImplementTrie();
 //        NonOverlappingIntervals.preEraseOverlapIntervals();
 //        DailyTemperatures.preDailyTemperatures();
-//        GameOfLife.preGameOfLife();
-        ConvertSortedArrayToBinarySearchTree.preSortedArrayToBST();
 
     }
 }
