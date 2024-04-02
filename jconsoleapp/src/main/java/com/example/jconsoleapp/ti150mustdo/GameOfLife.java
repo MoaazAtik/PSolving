@@ -19,7 +19,7 @@ public class GameOfLife {
         pa(expectedOutput);
         p();
 //        gameOfLife(board); // Disable it before calling another method. modifies the input
-//        gameOfLife2(board); // Wrong. Disable it before calling another method. modifies the input
+//        gameOfLife2(board); // Disable it before calling another method. modifies the input
         gameOfLife3(board); // Disable it before calling another method. modifies the input
         pa(board);
     }
@@ -53,6 +53,18 @@ public class GameOfLife {
             case 6:
                 board = new int[][]{{0, 1}, {1, 1}, {1, 1}, {0, 0}, {0, 1}, {1, 0}};
                 expectedOutput = new int[][]{{1, 1}, {0, 0}, {1, 1}, {1, 1}, {0, 0}, {0, 0}};
+                break;
+            case 7:
+                board = new int[][]{{1}};
+                expectedOutput = new int[][]{{0}};
+                break;
+            case 8:
+                board = new int[][]{{0, 1}, {0, 0}};
+                expectedOutput = new int[][]{{0, 0}, {0, 0}};
+                break;
+            case 9:
+                board = new int[][]{{1, 0, 0, 1}};
+                expectedOutput = new int[][]{{0, 0, 0, 0}};
                 break;
         }
     }
@@ -120,47 +132,37 @@ public class GameOfLife {
 
 
     /**
-     * Wrong. back Row and back Col calculation should be fixed. Queue.
-     * Space O(1) (?), In-place, Stack.
+     * 1ms - 42.0mb. Queue.
+     * Space O(1) (?), In-place, Stack, Safe distance.
      */
     private static void gameOfLife2(int[][] board) {
-
         Queue<Integer> queue = new LinkedList<>();
         int m = board.length; // rows
         int n = board[0].length; // cols
-        int maxColIndex = m - 1;
-        int maxRowIndex = n - 1;
-        int backR = 0;
-        int backC = 0;
-//        int backPosition = 0;
-//        int aackC = 2%6;
-//        int a = 6 - (Math.abs(5 - 8) % 6); // 3
-//        int b = 6 - (Math.abs(0 - 8) % 6); // 4
-//        int cc1 = n - (Math.abs(5 - (n + 2)) % n); // 3
-//        int cc2 = n - (Math.abs(0 - (n + 2)) % n); // 4
-//        int rr1 = 4 - (Math.abs(5 - 8) / 5) - 1; // 3
-//        int rr2 = 4 - (Math.abs(0 - 8) / 5) - 1; // 2
-//                backPosition = c - (n + 2);
-//                backR = r - (Math.abs(c - safeDistance) / maxColIndex) - 1;
-//                backC = n - (Math.abs(c - safeDistance) % n);
+        int maxRowIndex = m - 1;
+        int maxColIndex = n - 1;
+        int backR = -1;
+        int backC = -1;
 
         for (int r = 0; r < m; r++) {
             for (int c = 0; c < n; c++) {
-                int temp = c - 2;
-                int skippedDangerZone = (n + 2) + c; // current cell excluded
-                int cellsBehind = (r * n) + c; // current cell excluded
-//                backC = c - cellsBehind; // current cell excluded
-                int currentPosition = (r * n) + c;
-                int backPosition = currentPosition - (n + 2);
-//                if (temp < 0) {
-//                    backR = r - 2; //  fix this
-//                    backC = temp + n; //  fix this
-//                } else {
-//                    backR = r - 1;
-//                    backC = temp;
-//                }
-                if (backR >= 0 && backC >= 0)
-                    board[backR][backC] = queue.poll();
+
+                if (c < 2) {
+                    if (r >= 2) {
+                        backR = r - 2;
+                        if (n <= 2)
+                            backC = c;
+                        else
+                            backC = c - 2 + n;
+                        board[backR][backC] = queue.poll();
+                    }
+                } else { // c >= 2
+                    if (r >= 1) {
+                        backR = r - 1;
+                        backC = c - 2;
+                        board[backR][backC] = queue.poll();
+                    }
+                }
 
                 Stack<Integer> neighbors = getLiveNeighbors(r, c, board);
                 int liveNeighbors = neighbors.size();
@@ -179,7 +181,14 @@ public class GameOfLife {
             }
         }
 
-        backC++;
+        if (n > 2)
+            backC++;
+        else { // n <= 2
+            backC = 0;
+            backR++;
+        }
+        if (backR == -1)
+            backR = 0;
         while (backR <= maxRowIndex) {
             while (backC <= maxColIndex) {
                 board[backR][backC] = queue.poll();
