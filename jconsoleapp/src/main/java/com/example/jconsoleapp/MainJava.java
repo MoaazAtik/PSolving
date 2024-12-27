@@ -28,7 +28,7 @@ public class MainJava {
 //        GameOfLife.preGameOfLife();
 //        ConvertSortedArrayToBinarySearchTree.preSortedArrayToBST();
 //        MaximumSubarray.preMaxSubArray();
-        PalindromeNumber.preIsPalindrome();
+//        PalindromeNumber.preIsPalindrome();
 
         // LeetCode 75 - Ace Coding Interview with 75 Qs
 //        FindTheHighestAltitude.preLargestAltitude();
@@ -50,5 +50,6 @@ public class MainJava {
 //        NonOverlappingIntervals.preEraseOverlapIntervals();
 //        DailyTemperatures.preDailyTemperatures();
 
+        CracklePop.prePopScan();
     }
 }
