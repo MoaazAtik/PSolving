@@ -5,6 +5,7 @@ import static com.example.jconsoleapp.MyHelper.p;
 import com.example.jconsoleapp.others.BracketMatcher;
 import com.example.jconsoleapp.others.CracklePop;
 import com.example.jconsoleapp.others.FindIntersection;
+import com.example.jconsoleapp.others.LongestWord;
 
 public class MainJava {
 
@@ -51,5 +52,6 @@ public class MainJava {
 //        CracklePop.prePopScan();
 //        BracketMatcher.preBracketMatcher();
         FindIntersection.preFindIntersection();
+        LongestWord.preLongestWord();
     }
 }
