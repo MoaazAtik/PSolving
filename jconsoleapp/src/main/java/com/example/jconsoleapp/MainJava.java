@@ -2,10 +2,7 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
-import com.example.jconsoleapp.others.BracketMatcher;
-import com.example.jconsoleapp.others.CracklePop;
-import com.example.jconsoleapp.others.FindIntersection;
-import com.example.jconsoleapp.others.LongestWord;
+import com.example.jconsoleapp.others.*;
 
 public class MainJava {
 
@@ -51,7 +48,8 @@ public class MainJava {
 
 //        CracklePop.prePopScan();
 //        BracketMatcher.preBracketMatcher();
-        FindIntersection.preFindIntersection();
-        LongestWord.preLongestWord();
+//        FindIntersection.preFindIntersection();
+//        LongestWord.preLongestWord();
+        MostFreeTime.preMostFreeTime();
     }
 }
