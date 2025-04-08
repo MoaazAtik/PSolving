@@ -214,6 +214,20 @@ public class MyHelper {
 
 
     /**
+     * General-purpose scanner
+     */
+    public static String s(String purposeOfCall) {
+        Scanner myObj = new Scanner(System.in);
+
+        System.out.println("Enter your string for: " + purposeOfCall + "...");
+
+        String userInput = myObj.nextLine();
+
+        System.out.println("User input is: " + userInput);
+        return userInput;
+    }
+
+    /**
      * Get user input
      */
     public static void s() {
