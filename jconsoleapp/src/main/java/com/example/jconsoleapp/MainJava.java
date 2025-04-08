@@ -2,11 +2,7 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
-import com.example.jconsoleapp.l75ace.DailyTemperatures;
-import com.example.jconsoleapp.ti150mustdo.ConvertSortedArrayToBinarySearchTree;
-import com.example.jconsoleapp.ti150mustdo.GameOfLife;
-import com.example.jconsoleapp.ti150mustdo.MaximumSubarray;
-import com.example.jconsoleapp.ti150mustdo.PalindromeNumber;
+import com.example.jconsoleapp.others.CracklePop;
 
 public class MainJava {
 

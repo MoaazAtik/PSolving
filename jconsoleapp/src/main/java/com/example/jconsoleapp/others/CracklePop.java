@@ -1,4 +1,4 @@
-package com.example.jconsoleapp;
+package com.example.jconsoleapp.others;
 
 import java.util.Stack;
 
@@ -14,7 +14,7 @@ public class CracklePop {
      */
     /*
     Depending on the understanding of the problem we can solve it in multiple ways.
-    - The question doesn't explicitly apply the rule of 'instead of the number' on all three cases. Therefore we could:
+    - The question doesn't explicitly apply the rule of 'instead of the number' on all three cases. Therefore, we could:
     1. Print a word instead of its number in all three cases as implemented in popScan and popScan2 functions.
     2. Print a word without the number only for the first case while in the second and third case we print the number with its word as implemented in popScan3 function.
     - Since it's not determined by the question, I decided to give each number (and/or its word) a separate line.
