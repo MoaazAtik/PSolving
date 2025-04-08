@@ -2,8 +2,19 @@ package com.example.jconsoleapp.others;
 
 import java.util.Stack;
 
+import static com.example.jconsoleapp.MyHelper.p;
+
 // #BracketMatcher @ Coderbyte
 public class BracketMatcher {
+
+    public static void preBracketMatcher() {
+//        String str = "d())";
+        String str = "(d())";
+//        String str = "(d(())";
+//        String str = ")(d())";
+
+        p(bracketMatcher(str));
+    }
 
     public static String bracketMatcher(String str) {
         int b = 0;

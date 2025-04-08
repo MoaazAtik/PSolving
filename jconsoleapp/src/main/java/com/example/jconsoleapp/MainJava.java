@@ -2,7 +2,9 @@ package com.example.jconsoleapp;
 
 import static com.example.jconsoleapp.MyHelper.p;
 
+import com.example.jconsoleapp.others.BracketMatcher;
 import com.example.jconsoleapp.others.CracklePop;
+import com.example.jconsoleapp.others.FindIntersection;
 
 public class MainJava {
 
@@ -46,6 +48,8 @@ public class MainJava {
 //        NonOverlappingIntervals.preEraseOverlapIntervals();
 //        DailyTemperatures.preDailyTemperatures();
 
-        CracklePop.prePopScan();
+//        CracklePop.prePopScan();
+//        BracketMatcher.preBracketMatcher();
+        FindIntersection.preFindIntersection();
     }
 }

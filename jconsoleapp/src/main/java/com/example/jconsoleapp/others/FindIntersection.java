@@ -1,9 +1,17 @@
 package com.example.jconsoleapp.others;
 
+import static com.example.jconsoleapp.MyHelper.p;
+
 // #FindIntersection @ Coderbyte
 public class FindIntersection {
 
-    // {"1, 3, 4, 7, 13",    "1, 2, 4, 13, 15"}
+    public static void preFindIntersection() {
+        String[] arr = new String[]{"1, 3, 4, 7, 13",
+                "1, 2, 4, 13, 15"};
+
+        p(findIntersection(arr));
+    }
+
     public static String findIntersection(String[] strArr) {
         String[] left = strArr[0].split(", ");
         String[] right = strArr[1].split(", ");
