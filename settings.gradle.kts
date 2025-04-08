@@ -14,5 +14,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "PSolving"
-include(":app")
 include(":jconsoleapp")
