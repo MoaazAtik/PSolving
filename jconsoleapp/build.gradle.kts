@@ -1,11 +1,18 @@
 plugins {
     kotlin("jvm")
-    id("java-library")
+
+    // To run this as a standalone app in Terminal with command: ./gradlew run
+    application
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+// Entry point for running the app
+application {
+    mainClass.set("com.example.jconsoleapp.MainJava")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
