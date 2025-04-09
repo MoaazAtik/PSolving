@@ -1,6 +1,6 @@
 # PSolving
 
-This repo includes coding problems related to various fields with multiple solution approaches implementing various Algorithms and Data Structures utilizing the Android Studio IDE.
+This repo includes coding problems related to various fields with multiple solution approaches implementing various Algorithms and Data Structures utilizing the IntelliJ IDEA or Android Studio IDEs to run Java and Kotlin code.
 
 
 # Topics
